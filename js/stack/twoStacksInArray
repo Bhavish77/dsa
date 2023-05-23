@@ -1,0 +1,95 @@
+class Stack {
+  constructor(size) {
+    this.arr = new Array(size);
+    this.size = size;
+    this.top1 = -1;
+    this.top2 = size;
+  }
+
+  push1(data) {
+    if (this.top2 - this.top1 === 1) {
+      console.log("OVERFLOW in stack 1");
+    } else {
+      this.top1++;
+      this.arr[this.top1] = data;
+    }
+  }
+
+  pop1() {
+    if (this.top1 === -1) {
+      console.log("UNDERFLOW in stack 1");
+    } else {
+      this.arr[this.top1] = 0;
+      this.top1--;
+    }
+  }
+
+  push2(data) {
+    if (this.top2 - this.top1 === 1) {
+      console.log("OVERFLOW in stack 2");
+    } else {
+      this.top2--;
+      this.arr[this.top2] = data;
+    }
+  }
+
+  pop2() {
+    if (this.top2 === this.size) {
+      console.log("UNDERFLOW in stack 2");
+    } else {
+      this.arr[this.top2] = 0;
+      this.top2++;
+    }
+  }
+
+  print() {
+    console.log();
+    console.log("top1: " + this.top1);
+    console.log("top2: " + this.top2);
+    for (let i = 0; i < this.size; i++) {
+      console.log(this.arr[i] + " ");
+    }
+    console.log();
+  }
+}
+
+const s = new Stack(10);
+
+s.push1(10);
+s.print();
+s.push1(20);
+s.print();
+s.push1(30);
+s.print();
+s.push1(40);
+s.print();
+s.push1(50);
+s.print();
+
+s.push2(100);
+s.print();
+s.push2(110);
+s.print();
+s.push2(120);
+s.print();
+s.push2(130);
+s.print();
+s.push2(140);
+s.print();
+
+s.pop1();
+s.print();
+s.pop1();
+s.print();
+s.pop1();
+s.print();
+s.pop1();
+s.print();
+s.pop1();
+s.print();
+
+s.push2(1000);
+s.print();
+
+s.pop1();
+s.print();
