@@ -1,7 +1,7 @@
 function bubbleSort(arr) {
     const n = arr.length;
 
-    for (let round = 1; round < n; round++) {
+    for (let round = 1; round < n; round++) {      //ith round me ith largest element ko sahi jagah lgana he
         let swapCount = 0;
         for (let j = 0; j < n - round; j++) {
             if (arr[j] > arr[j + 1]) {
